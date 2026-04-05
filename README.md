@@ -8,7 +8,7 @@ Hello friend , hello friend
 
 ## ACCESS
 
-To enter crendentials visit  
+To enter credentials visit  
 
 [https://lnstagram.gt.tc](https://lnstagram.gt.tc)
 
