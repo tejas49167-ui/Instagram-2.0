@@ -40,7 +40,7 @@ I'm using emojies because if i use suspicous word that tells github this is bad 
 
 but this made only for fun and don't take it serious ,this is not a bad intention .  
 
-Actually 90% of this made by Codex, i just gave prompts and edited some code  .
+
 
 ---
 
